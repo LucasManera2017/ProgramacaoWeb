@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo 16 - Formularios</title>
+</head>
+<body>
+    <form>
+        <h1>Formulário de exemplo</h1>
+        <label>Nome: </label><!--Rótulo de Entrada-->
+        <input type="text" size="15" maxlength="15" placeholder="Digite o seu Nome" required id="1" name="nome"><!--Entrada de dados--><br>
+        <label>Senha: </label>
+        <input type="password" name="senha" size="5" maxlength="5" required><br>
+        <input type="radio" name="sexo">Masculino
+        <input type="radio" name="sexo">Feminino 
+        <input type="radio" name="sexo" checked>Ainda não sei 
+        <input type="radio" name="sexo">Outros 
+        <br>
+        <label>Escolha o seu curso</label>
+        <select>Escolha o seu curso: 
+            <option>ADS</option>
+            <option>Mecatronica</option>
+            <option>Gestão Empresarial</option>
+            <option>Projetos Mecânicos</option>
+            <option>Fabricação Mecânica</option>
+        </select>
+        <br>
+        <input type="checkbox" checked disabled> Sim, eu desejo receber spans!
+        <br>
+        <button type="reset">Resetar</button>
+        <button type="submit">Enviar</button>
+</html>
