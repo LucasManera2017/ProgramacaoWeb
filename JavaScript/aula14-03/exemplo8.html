@@ -1,0 +1,21 @@
+<script type="text/javascript">
+  var nome = prompt("Digite o seu nome: ");
+  alert("Olá, " + nome + "! Seja bem-vindo ao nosso site!");
+  var resposta = confirm("Você pode responder algumas perguntas?");
+
+  //Analisando as respostas via confirm 
+  //O botao ok= true e cancelar=false
+
+  //If=se e else=senão 
+  if (resposta == true) {
+    resposta = confirm("Você gosta de pudim?")
+    if (resposta == true) {
+      alert("Parabéns! É uma delícia!");
+    } else {
+      alert("Que pena! Sobra mais pra mim.");
+    }
+  } else {
+    alert ("Obrigado mesmo assim!");
+  }
+   
+</script>
