@@ -1,0 +1,18 @@
+<script>
+  function sorteio(){
+    a=parseInt(Math.random()*10);
+    return a;
+  }
+  document.write('<b>SETE DA SORTE!</b><br>');
+  var a=sorteio();
+  document.write(a);
+  var b=sorteio();
+  document.write(b);
+  var c=sorteio();
+  document.write(c);
+  if (a==7&&b==7&&c==7){
+    document.write('<br><b>Você ganhou!</b>');
+  } else {
+    document.write('<br><b>Você perdeu!</b>');
+  }
+</script>
