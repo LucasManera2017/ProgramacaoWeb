@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      color: white;
+    }
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .container {
+      background: darkcyan;
+      text-align: center;
+      width: 600px;
+      border-radius: 50px;
+      padding: 10px 0px 20px 0px;
+      box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    }
+    .label {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: rgb(237, 248, 254);
+    }
+    input{
+      background: lightcyan;
+      border: none;
+      border-radius: 5px;
+      color: black;
+    }
+    h1 {
+      color: white;
+    }
+    button{
+      padding: 10px 20px;
+      font-weight: bold;
+      background-color: rgba(0, 92, 92, 0.344);
+      border: 0px;
+      border-radius: 20px;
+      box-shadow: rgba(0, 0, 0, 0.54) 0px 3px 8px;
+    }
+    button:hover{
+      background-color: rgb(24, 133, 96);
+      padding: 10px 22px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>CÁLCULO DO SALÁRIO</h1>
+    <label class="label">Entre com o valor da hora: </label>
+    <input type="text" name="valor"><br>
+    <label class="label">Entre com a qntd de horas: </label>
+    <input type="text" name="horas">
+    <br>
+    <b id="salario"></b>
+    <br>
+    <button type="submit" onclick="
+      calcularSalario();
+    ">Calcular</button>
+  </div>
+  <script type="text/javascript">
+    function calcularSalario (){
+      const valorHora = document.getElementsByName("valor");
+      const horaTrabalhada = document.getElementsByName("horas");
+
+      var salario = parseFloat(valorHora[0].value)*parseFloat(horaTrabalhada[0].value);
+      document.getElementById("salario").innerHTML="Total a Receber: "+salario.toFixed(2);
+    }
+
+    
+  </script>
+</body>
+</html>

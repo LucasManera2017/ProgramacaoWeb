@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exemplo Calculo do IMC</title>
+    <style>
+      .conteudo{
+        background: lightcoral;
+        width: 600px;
+        border-radius: 80px;
+        border: solid 2px lightseagreen;
+        text-align: center;
+      }
+      label {
+        display: inline-block;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="conteudo">
+      <h1>CALCULANDO O IMC</h1>
+      <label>Digite sua altura: </label>
+      <input type="text" name="altura" /><br />
+      <label>Digite seu peso: </label>
+      <input type="text" name="peso" />
+      <br />
+      <b id="total"></b>
+      <br />
+      <b id="mensagem"></b>
+      <br>
+      <button onclick="
+        calcular()
+      ">CALCULAR</button>
+    </div>
+    <script>
+      function calcular () {
+       const altura = document.getElementsByName("altura");
+       const peso = document.getElementsByName("peso");
+      
+       var imc = parseFloat(peso[0].value)/(parseFloat(altura[0].value)*parseFloat(altura[0].value));
+       document.getElementById("total").innerHTML = imc.toFixed(2);
+       var mensagem;
+       if(imc<=18)mensagem="Abaixo do peso";
+       else if (imc<=25)mensagem="Peso ideal";
+       else if (imc<=30)mensagem="Excesso de peso";
+       else mensagem="Obesidade";
+        document.getElementById("mensagem").innerHTML=mensagem;
+      }
+    </script>
+  </body>
+</html>
