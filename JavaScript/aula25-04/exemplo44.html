@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      box-sizing: border-box;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    }
+
+    body {
+      background: #6A9113;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #141517, #6A9113);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #141517, #6A9113); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    div {
+      margin-top: 300px;
+      background-color: #141517;
+      width: 500px;
+      height: 200px;
+      display: flex;
+      flex-direction: column;
+      border-radius: 40px;
+    }
+    h4 {
+      color: white;
+      text-transform: uppercase;
+      font-weight: 400;
+      font-size: 30px;
+    }
+
+    select {
+      width: 250px;
+      height: 30px;
+      padding: 0px 5px;
+      background-color: #1b2700;
+      border-radius: 5px;
+      color: white;
+    }
+
+  </style>
+</head>
+<body>
+<div>
+  <form id="form" method="" action="">
+    <h4>Escolha um curso: </h4>
+    <select id="curso">
+      <option value="adas">ADS</option>
+      <option value="ge">gestão empresarial</option>
+      <option value="me">mecatrônica</option>
+      <option value="pm">projetos mecânicos</option>
+    </select>
+
+
+
+  </form>
+  <br>
+  <input type="text" id="novoCurso" placeholder="Digite uma nova fruta">
+  <button id="btn">Adicionar</button>
+</div>
+  <script>
+    window.onload = function(){//ao carregar a página
+      const formulario = document.getElementById("form");
+      const botao = document.getElementById("btn");
+      botao.onclick = function () {//Evento click do botão 
+        const novoCursoNome = document.getElementById("novoCurso").value;
+        if(novoCursoNome.trim() != "") {//trim remove espaços em branco antes e depois do texto
+          var novaOpcao = new Option(novoCursoNome, novoCursoNome);//Cria uma nova opção
+          formulario.curso.add(novaOpcao, undefined);//adiciona uma nova opção ao select
+          //undefined adiciona no final da lista
+          document.getElementById("novoCurso").value="";
+        } else {
+          alert("Digite um curso válido!")
+  
+        };
+      };
+    };
+  </script>
+
+
+
+  </script>
+</body>
+</html>

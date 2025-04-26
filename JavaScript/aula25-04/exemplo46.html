@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exemplo diferenças entre innerHTML, textContent e innerText</title>
+  <style>
+    *{
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    }
+    body{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    .caixa {
+      background-color: palegreen;
+      padding: 10px;
+      margin-bottom: 10px;
+      width: 250px;
+      height: auto;
+      text-align: center;
+      border-radius: 50px 0px;
+    }
+    button {
+      padding: 5px 10px;
+      background-color: rgb(114, 255, 114);
+      border: none;
+      border-radius: 50px;
+      box-shadow: 5px 2px 2px;
+    }
+    button:hover {
+      background-color: paleturquoise;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <h1>
+    Manipulação de conteúdo 
+  </h1>
+  <div class="caixa">
+    <p id="paragrafo">Texto original: <b>Este é um exemplo</b></p>
+    <button id="btnHTML">Alterar com innerHTML</button><br><br>
+    <button id="btnTextContent">Alterar com textContent</button><br><br>
+    <button id="btnInnerText">Alterar com innerText</button>
+  </div>
+
+  <script>
+    window.onload = function() {
+      const paragrafo = document.getElementById("paragrafo");
+      const btnHTML = document.getElementById("btnHTML");
+      const btnTextContent = document.getElementById("btnTextContent");
+      const btnInnerText = document.getElementById("btnInnerText");
+      //Manipular o conteúdo do parágrafo com inner
+      btnHTML.addEventListener('click', () =>{
+        paragrafo.innerHTML = "Texto alterado com <b>innerHTML</b>"//inner permite inserir tags HTML
+      })
+      btnTextContent.addEventListener('click', () =>{
+        paragrafo.textContent = "Texto alterado com textContent"//Não permite tags
+      })
+      btnInnerText.addEventListener('click', () =>{
+        paragrafo.innerText = "Texto alterado com innerText"//Não permite adicionar tags e respeita o estilo
+      })
+    }
+  </script>
+</body>
+</html>

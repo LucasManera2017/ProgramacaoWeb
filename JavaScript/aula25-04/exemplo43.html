@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exemplo - window.onload</title>
+</head>
+<body>
+  <form id="fDemo" method="" action="">
+    <h4>Escolha sua fruta preferida: </h4>
+    <select id="fruta">
+      <option value="banana">Banana</option>
+      <option value="maca">Maçã</option>
+      <option value="laranja">Laranja</option>
+      <option value="uva">Uva</option>
+    </select>
+
+
+
+  </form>
+  <br>
+  <input type="text" id="novaFruta" placeholder="Digite uma nova fruta">
+  <button id="btn">Adicionar</button>
+  <script>
+    window.onload = function(){//ao carregar a página
+      const formulario = document.getElementById("fDemo");
+      const botao = document.getElementById("btn");
+      botao.onclick = function () {//Evento click do botão 
+        const novaFrutaNome = document.getElementById("novaFruta").value;
+        if(novaFrutaNome.trim() != "") {//trim remove espaços em branco antes e depois do texto
+          var novaOpcao = new Option(novaFrutaNome, novaFrutaNome);//Cria uma nova opção
+          formulario.fruta.add(novaOpcao, undefined);//adiciona uma nova opção ao select
+          //undefined adiciona no final da lista
+          document.getElementById("novaFruta").value="";
+        } else {
+          alert("Digite uma fruta válida!")
+  
+        };
+      };
+    };
+  </script>
+  <!-- 
+  get - barra de endereço
+  query, fica na barra de endreço, histórico. 
+
+  post - envia pela memória
+  -->
+</body>
+</html>
